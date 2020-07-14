@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<?OFX OFXHEADER="200" VERSION="220" SECURITY="NONE" OLDFILEUID="NONE"
+NEWFILEUID="<yourUUID>"?>
+<OFX>
+    <SIGNONMSGSRQV1>
+        <SONRQ>
+		<DTCLIENT><current date and time></DTCLIENT>
+		<USERID><username></USERID>
+		<USERPASS><password></USERPASS>
+		<LANGUAGE>ENG</LANGUAGE>
+            <FI>
+		    <ORG>B1</ORG>
+		    <FID>10898</FID>
+            </FI>
+	    <APPID>QWIN</APPID>
+	    <APPVER>2700</APPVER>
+	    <CLIENTUID><yourUUID></CLIENTUID>
+        </SONRQ>
+    </SIGNONMSGSRQV1>
+    <CREDITCARDMSGSRQV1>
+        <CCSTMTTRNRQ>
+		<TRNUID><random></TRNUID>
+		<CLTCOOKIE>1</CLTCOOKIE>
+            <CCSTMTRQ>
+                <CCACCTFROM>
+			<ACCTID><credit card number><ACCTID>
+                </CCACCTFROM>
+                <INCTRAN>
+			<DTSTART><date start></DTSTART>
+			<INCLUDE>Y</INCLUDE>
+                </INCTRAN>
+            </CCSTMTRQ>
+        </CCSTMTTRNRQ>
+    </CREDITCARDMSGSRQV1>
+</OFX>
