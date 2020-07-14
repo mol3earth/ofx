@@ -16,7 +16,7 @@ The main file is spending_report.py and runs from command line like so:
                 --config <path to ofxget config file>
                 --goal <a spending amount for the week>
 
-# Dependencies
+### Dependencies
 
 ofxtools
 matplotlib
@@ -26,7 +26,7 @@ numpy
 
 ## Configuring ofxget, and password storage
 
-# Install & Configure ofxget 
+### Install & Configure ofxget 
 
 Configuring ofxget is pretty well documented here (ofxtools doc)[https://ofxtools.readthedocs.io/en/latest/installation.html]
 
@@ -50,7 +50,7 @@ You can run
 typically prompts for password. Enter it and you will get an xml response of
 ofx data.
 
-# Configure Password
+### Configure Password
 
 We can store the password with keyring  
     $ pip install keyring  
