@@ -28,7 +28,7 @@ numpy
 
 ### Install & Configure ofxget 
 
-Configuring ofxget is pretty well documented here (ofxtools doc)[https://ofxtools.readthedocs.io/en/latest/installation.html]
+Configuring ofxget is pretty well documented here [ofxtools doc](https://ofxtools.readthedocs.io/en/latest/installation.html)
 
 Here are two simple curl scripts to post and get info from an ofx server
 be sure to modify the header for your use.
