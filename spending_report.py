@@ -430,24 +430,25 @@ def plotTrend(allTrans, **kwargs):
             #dates.append("-".join([date[0:4],date[4:6],date[6:8]]))
             dates.append( datetime.strptime(date,"%Y%m%d") )
             runningtotal+=allTrans[date]['total']
+            print(f'{date} - {runningtotal}')
             money.append(runningtotal)
             goal += daily
             goals.append(goal)
+    pyplot.title(f'{dates[0].strftime("%B")} - Spending')
     formatter = ticker.FormatStrFormatter('$%1.2f')
     ax.yaxis.set_major_formatter(formatter) 
-    ax.xaxis.set_major_formatter(mp_dates.DateFormatter('%m/%d/%Y'))
+    ax.xaxis.set_major_formatter(mp_dates.DateFormatter('%-d'))
     ax.xaxis.set_major_locator(mp_dates.DayLocator())
     ax.plot_date(dates, money, 'bo-')
-    ax.plot_date(dates, goals, 'k*--')
-    idx = min(len(dates)-2,1)
-    ax.text( dates[idx], goals[idx], ' $%.2f/week Avg. ' % (weeklygoal),
+    ax.plot_date(dates, goals, 'k--')
+    ax.text( dates[0], goals[1], ' $%.2f/week Avg. ' % (weeklygoal),
             rotation=29,            
-            bbox=dict(boxstyle="square",
-                       ec=(1, 1, 1),
-                       fc=(1, 1, 1),
-                       )
+            #bbox=dict(boxstyle="square",
+            #           ec=(1, 1, 1),
+            #           fc=(1, 1, 1),
+            #           )
          )
-    ax.grid(axis='y')
+    ax.grid(axis='both')
     if save_file:
         print('Saving trend file: ' + save_file)
         fig.savefig(save_file)
@@ -477,7 +478,7 @@ def usage():
     print('            --goal <a spending amount for the week>')
 
 def main(argv):
-    institution = None
+    institution = 'chase'
     trend_file = None
     ofx_file = None
     config = None
